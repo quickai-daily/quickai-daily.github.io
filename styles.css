@@ -96,6 +96,7 @@ section { margin-bottom: 28px; }
 .tag-aff { background: var(--yellow); color: #1a1400; font-size: 11px; padding: 3px 6px; }
 .card-cta { display: flex; align-items: center; gap: 10px; }
 .card-cta .btn { flex: 1; }
+.aff-note { font-size: 12px; color: var(--muted); margin: 8px 0 0; }
 .card-pro { border-color: rgba(0, 229, 160, 0.25); }
 
 /* Footer */

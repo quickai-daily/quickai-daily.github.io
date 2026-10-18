@@ -10,6 +10,8 @@
   // Some affiliate programs read their own sub-ID parameter. Make documents ?affiliateSource=
   // (help.make.com/affiliate-program). Add others here once you know their parameter name.
   var SUBID_PARAMS = { make: "affiliateSource" };
+  // Shown in plain words under every live affiliate link (ACCC / FTC: clear and close to the link).
+  var AFF_DISCLOSURE = "Affiliate link: QuickAI may earn a commission if you sign up, at no extra cost to you.";
 
   var params = new URLSearchParams(window.location.search);
 
@@ -111,10 +113,11 @@
     cta.appendChild(a);
     if (showAffTag) {
       var tag = el("span", "tag tag-aff", "Affiliate");
-      tag.title = "Affiliate link: QuickAI may earn a commission at no extra cost to you.";
+      tag.title = AFF_DISCLOSURE;
       cta.appendChild(tag);
     }
     c.appendChild(cta);
+    if (showAffTag) c.appendChild(el("p", "aff-note", AFF_DISCLOSURE)); // visible, right under the link
     return c;
   }
 

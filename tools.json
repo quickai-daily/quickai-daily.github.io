@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "_notes": "Single source of truth for the bio page. Add one object per tool. affiliateUrl: leave null for non-affiliate tools; while an application is pending, keep the {{PLACEHOLDER}} string - the page treats any value containing '{{' as 'not live yet', links to the official url instead, and hides the Affiliate tag. featuredDate: ISO date (YYYY-MM-DD) of the first video featuring the tool, or null. Future dates render as 'Video drops <date>'.",
   "tools": [
     {
@@ -10,6 +10,18 @@
       "url": "https://chatgpt.com/",
       "affiliateUrl": null,
       "affiliateProgram": null,
+      "featuredDate": "2026-10-19",
+      "freeTier": true,
+      "pro": false
+    },
+    {
+      "name": "Fliki",
+      "slug": "fliki",
+      "category": "Video",
+      "oneLiner": "Turns one sentence or a blog post into a voiced video. Free plan is 720p with a watermark and 3 credits a month.",
+      "url": "https://fliki.ai/",
+      "affiliateUrl": "https://fliki.ai?via=quickai",
+      "affiliateProgram": "Fliki Affiliate Program",
       "featuredDate": "2026-10-19",
       "freeTier": true,
       "pro": false
@@ -94,6 +106,18 @@
       "url": "https://www.descript.com/",
       "affiliateUrl": "{{DESCRIPT_AFF_URL}}",
       "affiliateProgram": "Descript Affiliate Program (PartnerStack)",
+      "featuredDate": null,
+      "freeTier": true,
+      "pro": true
+    },
+    {
+      "name": "beehiiv",
+      "slug": "beehiiv",
+      "category": "Newsletter",
+      "oneLiner": "Newsletter platform to write, send and grow an email list. Sign up through our link for a 14-day trial plus 20% off for 3 months.",
+      "url": "https://www.beehiiv.com/",
+      "affiliateUrl": "https://www.beehiiv.com/?via=quickai",
+      "affiliateProgram": "beehiiv Partner Program",
       "featuredDate": null,
       "freeTier": true,
       "pro": true
