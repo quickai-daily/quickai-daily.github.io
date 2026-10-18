@@ -1,0 +1,102 @@
+{
+  "updated": "2026-10-18",
+  "_notes": "Single source of truth for the bio page. Add one object per tool. affiliateUrl: leave null for non-affiliate tools; while an application is pending, keep the {{PLACEHOLDER}} string - the page treats any value containing '{{' as 'not live yet', links to the official url instead, and hides the Affiliate tag. featuredDate: ISO date (YYYY-MM-DD) of the first video featuring the tool, or null. Future dates render as 'Video drops <date>'.",
+  "tools": [
+    {
+      "name": "ChatGPT Intelligent UI",
+      "slug": "chatgpt-intelligent-ui",
+      "category": "Assistant",
+      "oneLiner": "Ask ChatGPT for a bill splitter, map or tap-through diagram and it builds a working mini-app right in the chat.",
+      "url": "https://chatgpt.com/",
+      "affiliateUrl": null,
+      "affiliateProgram": null,
+      "featuredDate": "2026-10-19",
+      "freeTier": true,
+      "pro": false
+    },
+    {
+      "name": "Gemini Notebook",
+      "slug": "gemini-notebook",
+      "category": "Study & notes",
+      "oneLiner": "Turns your notes into 60-second Short Video Overviews and quizzes (short-answer, multi-select, fill-in-the-blank).",
+      "url": "https://notebook.google/",
+      "affiliateUrl": null,
+      "affiliateProgram": null,
+      "featuredDate": "2026-10-20",
+      "freeTier": true,
+      "pro": false
+    },
+    {
+      "name": "Microsoft Copilot in Edge",
+      "slug": "microsoft-copilot-edge",
+      "category": "Browser",
+      "oneLiner": "Summarises the webpage you're on and reads uploaded files, free inside the Edge browser (subject to capacity limits).",
+      "url": "https://copilot.microsoft.com/",
+      "affiliateUrl": null,
+      "affiliateProgram": null,
+      "featuredDate": "2026-10-22",
+      "freeTier": true,
+      "pro": false
+    },
+    {
+      "name": "Gemini image generation (Nano Banana)",
+      "slug": "gemini-nano-banana",
+      "category": "Images",
+      "oneLiner": "Create and edit images from a text prompt in the Gemini app. Free users get Nano Banana 2; 2.1 is paid plans only.",
+      "url": "https://gemini.google/overview/image-generation/",
+      "affiliateUrl": null,
+      "affiliateProgram": null,
+      "featuredDate": "2026-10-23",
+      "freeTier": true,
+      "pro": false
+    },
+    {
+      "name": "ElevenLabs",
+      "slug": "elevenlabs",
+      "category": "Voice",
+      "oneLiner": "Natural-sounding AI voiceovers and dubbing in 90+ languages from a script.",
+      "url": "https://elevenlabs.io/",
+      "affiliateUrl": "{{ELEVENLABS_AFF_URL}}",
+      "affiliateProgram": "ElevenLabs Creator Affiliate Program (PartnerStack)",
+      "featuredDate": null,
+      "freeTier": true,
+      "pro": true
+    },
+    {
+      "name": "Make",
+      "slug": "make",
+      "category": "Automation",
+      "oneLiner": "Drag-and-drop automations that connect your apps so repetitive tasks run on their own.",
+      "url": "https://www.make.com/",
+      "affiliateUrl": "https://www.make.com/?pc=quickai",
+      "affiliateProgram": "Make Affiliate (35% for 12 months)",
+      "featuredDate": null,
+      "freeTier": true,
+      "pro": true
+    },
+    {
+      "name": "Gamma",
+      "slug": "gamma",
+      "category": "Slides & docs",
+      "oneLiner": "Type a topic, get a designed slide deck, doc or simple website in under a minute.",
+      "url": "https://gamma.app/",
+      "affiliateUrl": "{{GAMMA_AFF_URL}}",
+      "affiliateProgram": "Gamma Partner Program (PartnerStack)",
+      "featuredDate": null,
+      "freeTier": true,
+      "pro": true
+    },
+    {
+      "name": "Descript",
+      "slug": "descript",
+      "category": "Video editing",
+      "oneLiner": "Edit video and podcasts by editing the transcript; removes filler words and adds captions.",
+      "url": "https://www.descript.com/",
+      "affiliateUrl": "{{DESCRIPT_AFF_URL}}",
+      "affiliateProgram": "Descript Affiliate Program (PartnerStack)",
+      "featuredDate": null,
+      "freeTier": true,
+      "pro": true
+    }
+  ]
+}

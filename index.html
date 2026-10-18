@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta name='impact-site-verification' value='a422ffd9-8bc7-4df5-bb25-c196a2b57593'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>QuickAI · Free AI Tools List</title>
+  <meta name="description" content="1 free AI tool a day that actually saves you time. Tested, not hyped. The full list of tools featured on QuickAI.">
+  <meta name="theme-color" content="#0B0F1A">
+  <meta property="og:title" content="QuickAI · Free AI Tools List">
+  <meta property="og:description" content="1 free AI tool a day that actually saves you time. Tested, not hyped.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    HOSTING: this folder is fully static (index.html, styles.css, app.js, tools.json, logo.svg,
+    privacy.html, terms.html). Drop it into GitHub Pages / Cloudflare Pages / Netlify as-is.
+    No build step. tools.json is loaded with fetch(), so open it through a web server
+    (e.g. `python3 -m http.server` in this folder), not via file://.
+
+    PER-PLATFORM LINKS for each bio:
+      YouTube   → https://YOUR-DOMAIN/?src=yt
+      TikTok    → https://YOUR-DOMAIN/?src=tt
+      Instagram → https://YOUR-DOMAIN/?src=ig
+    The src value is appended to every outbound tool link as utm_source, and saved into the
+    signup form's hidden "src" field so the newsletter tool can tag subscribers by platform.
+  -->
+</head>
+<body>
+  <a class="skip" href="#tools">Skip to the tools list</a>
+
+  <header class="hero">
+    <img class="logo" src="logo.svg" width="64" height="64" alt="QuickAI logo">
+    <p class="brand">QuickAI</p>
+    <h1>1 free AI tool a day that actually saves you time.<br><span class="accent">Tested, not hyped.</span></h1>
+  </header>
+
+  <main>
+    <!-- Affiliate disclosure: shown above the first link, in plain words (ACCC influencer guidance;
+         FTC Endorsement Guides). Keep it here, above the list. Do not move it to the footer only. -->
+    <aside class="disclosure" role="note" aria-label="Affiliate disclosure">
+      <strong>Heads up:</strong> some links below are affiliate links. If you sign up or buy, QuickAI may earn a
+      commission at no extra cost to you. We only recommend tools we've tested or are actively testing. Affiliate links are marked
+      <span class="tag tag-aff">Affiliate</span>.
+    </aside>
+
+    <section class="signup" aria-labelledby="signup-title">
+      <h2 id="signup-title">Get 5 free AI tools every week</h2>
+      <p class="muted">One short email each week. Tested tools only. Unsubscribe anytime.</p>
+
+      <!--
+        ================= NEWSLETTER ENDPOINT: PLUG IN HERE =================
+        Replace the placeholder action URL below (and the field name if needed). Until you do,
+        app.js stops the form from submitting and shows a "not connected yet" message.
+
+        Kit (ConvertKit), free plan:
+          Kit → Grow → Landing Pages & Forms → create an inline form → Embed → HTML.
+          Copy the form's action, e.g. https://app.kit.com/forms/1234567/subscriptions
+          Email field name: email_address  (this is the default below)
+          For the hidden src field, create a custom field "src" in Kit and rename the input to fields[src].
+
+        Beehiiv, free Launch plan:
+          Use a beehiiv "Subscribe form" embed (it is an iframe, not a plain POST). Either paste the
+          embed in place of this <form>, or post to your own small serverless function that calls the
+          beehiiv API. Set utm_source on the subscription from the src value.
+
+        MailerLite, free plan:
+          Forms → Embedded forms → create → "HTML code". Copy the action, e.g.
+          https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe
+          Email field name: fields[email]  (change name="email_address" below)
+          Add a hidden custom field: fields[src]
+
+        Turn on double opt-in in the provider (best practice under the Spam Act 2003) and make sure the
+        welcome email identifies QuickAI and has an unsubscribe link.
+        =====================================================================
+      -->
+      <form id="signup-form" class="signup-form"
+            action="https://app.kit.com/forms/10062330/subscriptions"
+            method="post" data-placeholder-action="https://YOUR-NEWSLETTER-ENDPOINT.example/subscribe">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email_address" type="email" inputmode="email" autocomplete="email"
+               placeholder="you@email.com" required>
+        <input type="hidden" name="src" id="form-src" value="direct">
+        <input type="hidden" name="utm_source" id="form-utm-source" value="direct">
+        <input type="hidden" name="utm_medium" value="bio">
+        <input type="hidden" name="utm_campaign" value="free_tools_list">
+        <button type="submit" class="btn btn-primary">Send me the tools</button>
+      </form>
+      <p id="signup-status" class="form-status" role="status" aria-live="polite"></p>
+      <p class="fineprint">By subscribing you agree to get the weekly QuickAI email. See our <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-title">
+      <div class="section-head">
+        <h2 id="tools-title">Free AI tools list</h2>
+        <span class="pill pill-free">FREE</span>
+      </div>
+      <p class="muted">Every tool we've featured, newest first. Free tier on all of them.</p>
+      <div id="tool-list" class="cards" aria-live="polite">
+        <p class="muted loading">Loading tools…</p>
+      </div>
+    </section>
+
+    <section id="pro" aria-labelledby="pro-title">
+      <div class="section-head">
+        <h2 id="pro-title">Pro picks</h2>
+        <span class="pill pill-pro">PAID UPGRADES</span>
+      </div>
+      <p class="muted">Tools with a free plan and a paid upgrade worth knowing about. Some links here are affiliate links.</p>
+      <div id="pro-list" class="cards"></div>
+    </section>
+
+    <noscript>
+      <p class="disclosure">This list needs JavaScript to load. You can view the raw list in <a href="tools.json">tools.json</a>.</p>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy policy</a>
+      <span aria-hidden="true">·</span>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>Tool names and logos belong to their owners. QuickAI is independent and not endorsed by any tool listed.</p>
+    <!-- Shown by app.js only once a real ElevenLabs affiliate link is in tools.json (attribution
+         wording required by the ElevenLabs Creator Affiliate Program Terms, updated 10 Jun 2026). -->
+    <p id="elevenlabs-attribution" hidden>ElevenLabs and the ElevenLabs logo are registered trademarks or trademarks of ElevenLabs, Inc. Used with permission. QuickAI is not sponsored by, endorsed by, or affiliated with ElevenLabs except as an independent participant in the ElevenLabs Creator Affiliate Program.</p>
+    <p>© <span id="year">2026</span> QuickAI · Brisbane, Australia</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
