@@ -71,6 +71,18 @@
   }
   var today = new Date(); today.setHours(0, 0, 0, 0);
 
+  // ---- Prompt Pack launch line ---------------------------------------------
+  // Show "Launch week" only from Mon 26 Oct 2026 00:00 to Sun 1 Nov 2026 23:59 Brisbane time
+  // (AEST, UTC+10, no daylight saving). Absolute UTC instants, so the visitor's timezone doesn't matter.
+  var LAUNCH_START = Date.parse("2026-10-26T00:00:00+10:00");
+  var LAUNCH_END = Date.parse("2026-11-02T00:00:00+10:00"); // exclusive
+  var launchEl = document.getElementById("pack-launch");
+  if (launchEl) {
+    var nowMs = Date.now();
+    if (params.get("previewLaunch") === "1") nowMs = LAUNCH_START; // preview: ?previewLaunch=1
+    launchEl.hidden = !(nowMs >= LAUNCH_START && nowMs < LAUNCH_END);
+  }
+
   // ---- Rendering ----------------------------------------------------------
   function el(tag, cls, text) {
     var n = document.createElement(tag);
